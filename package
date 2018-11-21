@@ -1,0 +1,12 @@
+CREATE OR REPLACE
+PACKAGE BODY MYPACKAGE AS
+
+  procedure queryEmpList(dno in number,empList out empcursor) AS
+  BEGIN
+    
+    --打开光标
+    open empList for select * from emp where deptno = dno;
+    
+  END queryEmpList;
+
+END MYPACKAGE;
