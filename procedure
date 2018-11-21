@@ -1,0 +1,9 @@
+create or replace procedure queryempinform(eno in number,
+                                            pename out varchar2,
+                                            psal out number,
+                                            pjob out varchar2)
+as 
+begin
+        --得到该员工的姓名、月薪，和职位
+        select ename,sal,job into pename,psal,pjob from emp where empno = eno;
+end;
